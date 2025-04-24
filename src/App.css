@@ -9,7 +9,7 @@ body {
   position: absolute;
   border-radius: 50%;
   background: linear-gradient(135deg, #ff9966, #ff7733);
-  box-shadow: inset -3px -3px 8px rgba(0, 0, 0, 0.2), 
+  box-shadow: inset -3px -3px 8px rgba(0, 0, 0, 0.2),
               inset 3px 3px 8px rgba(255, 255, 255, 0.4);
   border: 2px dashed #333;
 }
@@ -40,13 +40,7 @@ body {
   bottom: 0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-.blue-platform, .green-platform, .yellow-platform {
-  min-width: 150px;
-  min-height: 50px;
-  padding: 20px;
-=======
+/* Platform colors */
 .blue-platform {
   background-color: #a6c8ff;
 }
@@ -59,6 +53,7 @@ body {
   background-color: #ffe066;
 }
 
+/* Platform sizing */
 .blue-platform,
 .green-platform,
 .yellow-platform {
@@ -66,7 +61,7 @@ body {
   min-height: 80px;
 }
 
-
+/* Popup */
 .popup {
   position: fixed;
   top: 20%;
@@ -93,6 +88,7 @@ body {
   }
 }
 
+/* Buttons */
 .btn {
   padding: 8px 16px;
   border-radius: 6px;
