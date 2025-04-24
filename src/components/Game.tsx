@@ -21,7 +21,7 @@ import {
 } from '../utils/constants';
 
 const FLOOR_OFFSET = 100; // Fixed distance from bottom
-const PLATFORM_OFFSET = 250; // Fixed distance from floor
+const PLATFORM_OFFSET = 350; // Fixed distance from floor
 
 const Game: React.FC = () => {
   const gameContainerRef = useRef<HTMLDivElement>(null);
