@@ -13,7 +13,7 @@ export const BALL_POSITION_X = 150;
 export const PLATFORM_WIDTH = 200;
 export const PLATFORM_HEIGHT = 150;
 export const PLATFORM_SPEED = 2; // Increased from 2 to 3 (1.5x faster)
-export const PLATFORM_GAP = 300;
+export const PLATFORM_GAP = 600;
 export const MIN_PLATFORM_Y = 300;
 export const MAX_PLATFORM_Y = 200; // Same as MIN to keep platforms at consistent height
 
