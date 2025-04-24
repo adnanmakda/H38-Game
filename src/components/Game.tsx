@@ -149,7 +149,7 @@ const Game: React.FC = () => {
           },
           size: { width: PLATFORM_WIDTH, height: PLATFORM_HEIGHT },
           type: project.type as 'blue' | 'green' | 'yellow',
-          title: `See how we solved ${project.title.toLowerCase()}`,
+          title: ` ${project.title.toLowerCase()}`,
           description: project.description,
           link: project.link
         });
