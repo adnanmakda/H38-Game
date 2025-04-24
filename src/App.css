@@ -59,11 +59,11 @@ body {
   transform: translateX(-50%);
   background-color: white;
   width: 90%;
-  max-width: 500px;
+  max-width: 700px;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   z-index: 100;
-  padding: 20px;
+  padding: 30px;
   animation: slideDown 0.3s forwards;
 }
 
