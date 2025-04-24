@@ -15,7 +15,7 @@ export const PLATFORM_HEIGHT = 150;
 export const PLATFORM_SPEED = 2; // Increased from 2 to 3 (1.5x faster)
 export const PLATFORM_GAP = 300;
 export const MIN_PLATFORM_Y = 500;
-export const MAX_PLATFORM_Y = 400; // Same as MIN to keep platforms at consistent height
+export const MAX_PLATFORM_Y = 800; // Same as MIN to keep platforms at consistent height
 
 // Game settings
 export const SCROLL_SPEED = 2;
