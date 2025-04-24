@@ -3,6 +3,7 @@ body {
   padding: 0;
   overflow: hidden;
   font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background-color: #FAF5F2;
 }
 
 .ball {
