@@ -25,6 +25,7 @@ const PLATFORM_OFFSET = 350; // Fixed distance from floor
 
 const Game: React.FC = () => {
   const gameContainerRef = useRef<HTMLDivElement>(null);
+  const projectIndexRef = useRef(0);
   const [gameSize, setGameSize] = useState({ width: window.innerWidth, height: window.innerHeight });
   
   const initialGameState = (): GameState => ({
@@ -136,8 +137,9 @@ const Game: React.FC = () => {
       let newPlatforms = [...updatedPlatforms];
       
       if (lastPlatform && lastPlatform.position.x < gameSize.width) {
-        const projectIndex = newPlatforms.length % PROJECTS.length;
-        const project = PROJECTS[projectIndex];
+        const project = PROJECTS[projectIndexRef.current];
+        projectIndexRef.current = (projectIndexRef.current + 1) % PROJECTS.length;
+
         
         newPlatforms.push({
           id: generatePlatformId(),
@@ -213,6 +215,7 @@ const Game: React.FC = () => {
 
   // Handle closing popup and resetting game
   const handleClosePopup = () => {
+    projectIndexRef.current = 0;
     setGameState(initialGameState());
     generateInitialPlatforms();
   };
