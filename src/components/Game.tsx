@@ -225,7 +225,7 @@ const Game: React.FC = () => {
   return (
     <div 
       ref={gameContainerRef}
-      className="relative bg-[#f5f0e8] w-full h-full"
+      className="relative bg-[#FAF5F2] w-full h-full"
       onClick={handleJump}
     >
       {/* Game elements */}
