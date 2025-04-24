@@ -10,6 +10,7 @@ interface PopupProps {
 const Popup: React.FC<PopupProps> = ({ project, onClose, onLearnMore }) => {
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className="fixed inset-0 bg-black bg-opacity-30 z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-md p-6 font-nunito text-[26px] shadow-none max-h-[90vh] w-full max-w-[600px] overflow-y-auto">
         <div className="mb-6">
@@ -44,6 +45,16 @@ const Popup: React.FC<PopupProps> = ({ project, onClose, onLearnMore }) => {
         <p className="text-[26px] text-gray-700">{project.description}</p>
       </div>
 
+=======
+    <div className="popup bg-white p-6 rounded-md shadow-none font-nunito text-[26px]">
+      <div className="mb-4">
+        <h2 className="text-[26px] font-bold text-gray-800 mb-2">
+          {project.title}
+        </h2>
+        <p className="text-[26px] text-gray-700">{project.description}</p>
+      </div>
+
+>>>>>>> parent of 285968d (big popup)
       <div className="flex justify-between mt-6">
         <button 
           className="px-6 py-2 bg-[#FF7E3D] text-white font-nunito text-[26px] rounded-md"
@@ -57,6 +68,9 @@ const Popup: React.FC<PopupProps> = ({ project, onClose, onLearnMore }) => {
         >
           Restart
         </button>
+<<<<<<< HEAD
+>>>>>>> parent of 285968d (big popup)
+=======
 >>>>>>> parent of 285968d (big popup)
       </div>
     </div>
