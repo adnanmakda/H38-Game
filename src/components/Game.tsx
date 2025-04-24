@@ -21,11 +21,10 @@ import {
 } from '../utils/constants';
 
 const FLOOR_OFFSET = 100; // Fixed distance from bottom
-const PLATFORM_OFFSET = 350; // Fixed distance from floor
+const PLATFORM_OFFSET = 250; // Fixed distance from floor
 
 const Game: React.FC = () => {
   const gameContainerRef = useRef<HTMLDivElement>(null);
-  const projectIndexRef = useRef(0);
   const [gameSize, setGameSize] = useState({ width: window.innerWidth, height: window.innerHeight });
   
   const initialGameState = (): GameState => ({
@@ -92,7 +91,7 @@ const Game: React.FC = () => {
         position: { x: xPosition, y: platformHeight },
         size: { width: PLATFORM_WIDTH, height: PLATFORM_HEIGHT },
         type: project.type as 'blue' | 'green' | 'yellow',
-        title: `${project.title.toLowerCase()}`,
+        title: `See how we solved ${project.title.toLowerCase()}`,
         description: project.description,
         link: project.link
       });
@@ -137,9 +136,8 @@ const Game: React.FC = () => {
       let newPlatforms = [...updatedPlatforms];
       
       if (lastPlatform && lastPlatform.position.x < gameSize.width) {
-        const project = PROJECTS[projectIndexRef.current];
-        projectIndexRef.current = (projectIndexRef.current + 1) % PROJECTS.length;
-
+        const projectIndex = newPlatforms.length % PROJECTS.length;
+        const project = PROJECTS[projectIndex];
         
         newPlatforms.push({
           id: generatePlatformId(),
@@ -149,7 +147,7 @@ const Game: React.FC = () => {
           },
           size: { width: PLATFORM_WIDTH, height: PLATFORM_HEIGHT },
           type: project.type as 'blue' | 'green' | 'yellow',
-          title: ` ${project.title.toLowerCase()}`,
+          title: `See how we solved ${project.title.toLowerCase()}`,
           description: project.description,
           link: project.link
         });
@@ -215,7 +213,6 @@ const Game: React.FC = () => {
 
   // Handle closing popup and resetting game
   const handleClosePopup = () => {
-    projectIndexRef.current = 0;
     setGameState(initialGameState());
     generateInitialPlatforms();
   };
