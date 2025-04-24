@@ -27,7 +27,9 @@ export const PROJECTS = [
   {
     type: 'blue',
     title: 'Housing Solution',
-    description: 'We developed an innovative platform that connects homeowners with renters, streamlining the housing search process and making it more accessible. Our solution increased successful matches by 45% and reduced average search time by 30%.',
+    description: 'Bronze-winged jacanas are found singly or in pairs foraging on aquatic vegetation. They balance on their long legs and long toes, and feed on plant material (claimed to be purely incidental[24]), insects and other invertebrates picked from the floating vegetation or the water's surface. Call is a wheezy piping seek-seek-seek given mostly in alarm. When threatened they sometimes hide by submerging themselves. The breeding season starts after the rains (June to September in India but occasional breeding in March rains reported in Rajasthan[25]). Males defend territories from other males with open wing and neck stretched displays which can escalate to pecking.[26] The territory maintenance activities are at a maximum from around 9 to 11 a.m.[27] The nest is a small platform of stems and leaves of Pistia, Nymphoides, Hydrilla, and Eichhornia placed on a mat of vegetation but eggs may also be laid directly on the leaf of a lotus plant. The usual clutch is four, the eggs are very conical, glossy brown with irregular black zig-zag markings. Incubation and care of the young is entirely left to males. The eggs hatch in 29 days. Predation rates of eggs are high, up to 94% were lost in one study to various predators including birds and turtles.[22] Young chicks may be sheltered between the wings and carried to safety.[19] They become independent of their father when they are about ten weeks old.[22]
+
+The nematode parasites Gongylonema indica and Stellocaronema alii,[28] and the feather louse Rallicola indicus[29][30] have been described from specimens of the bronze-winged jacana.[31]\',
     link: 'https://example.com/housing'
   },
   {
