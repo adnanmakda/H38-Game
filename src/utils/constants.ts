@@ -11,11 +11,11 @@ export const BALL_POSITION_X = 150;
 
 // Platform properties
 export const PLATFORM_WIDTH = 200;
-export const PLATFORM_HEIGHT = 150;
+export const PLATFORM_HEIGHT = 120;
 export const PLATFORM_SPEED = 2; // Increased from 2 to 3 (1.5x faster)
 export const PLATFORM_GAP = 300;
-export const MIN_PLATFORM_Y = 500;
-export const MAX_PLATFORM_Y = 800; // Same as MIN to keep platforms at consistent height
+export const MIN_PLATFORM_Y = 200;
+export const MAX_PLATFORM_Y = 100; // Same as MIN to keep platforms at consistent height
 
 // Game settings
 export const SCROLL_SPEED = 2;
