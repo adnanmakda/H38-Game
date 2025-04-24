@@ -40,11 +40,16 @@ body {
   bottom: 0;
 }
 
-.blue-platform,
-.green-platform,
+.blue-platform {
+  background-color: #007BFF; /* Blue color */
+}
+
+.green-platform {
+  background-color: #28A745; /* Green color */
+}
+
 .yellow-platform {
-  min-width: 250px;
-  min-height: 80px;
+  background-color: #FFC107; /* Yellow color */
 }
 
 .popup {
