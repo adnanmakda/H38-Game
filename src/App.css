@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.ball {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9966, #ff7733);
+  box-shadow: inset -3px -3px 8px rgba(0, 0, 0, 0.2), 
+              inset 3px 3px 8px rgba(255, 255, 255, 0.4);
+  border: 2px dashed #333;
+}
+
+.platform {
+  position: absolute;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.platform:hover {
+  transform: translateY(-2px);
+}
+
+.floor {
+  position: absolute;
+  height: 2px;
+  background-color: #333;
+  bottom: 0;
+}
+
+.blue-platform {
+  background-color: #a6c8ff;
+}
+
+.green-platform {
+  background-color: #b4f0a8;
+}
+
+.yellow-platform {
+  background-color: #ffe066;
+}
+
+.popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  padding: 20px;
+  animation: slideDown 0.3s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+
+.btn-primary {
+  background-color: #ff7733;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #ff6611;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
