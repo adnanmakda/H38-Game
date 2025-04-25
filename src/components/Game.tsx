@@ -11,7 +11,8 @@ import {
   BALL_INITIAL_VELOCITY,
   BALL_POSITION_X,
   GRAVITY, 
-  JUMP_FORCE, 
+  JUMP_FORCE,
+  IDLE_BOUNCE_FORCE,
   PLATFORM_WIDTH, 
   PLATFORM_HEIGHT,
   PLATFORM_SPEED,
@@ -20,8 +21,8 @@ import {
   PROJECTS
 } from '../utils/constants';
 
-const FLOOR_OFFSET = 100; // Fixed distance from bottom
-const PLATFORM_OFFSET = 250; // Fixed distance from floor
+const FLOOR_OFFSET = 200;
+const PLATFORM_OFFSET = 400;
 
 const Game: React.FC = () => {
   const gameContainerRef = useRef<HTMLDivElement>(null);
@@ -38,16 +39,15 @@ const Game: React.FC = () => {
     score: 0,
     isGameOver: false,
     isPaused: false,
-    activePopup: null
+    activePopup: null,
+    currentProjectIndex: 0
   });
 
   const [gameState, setGameState] = useState<GameState>(initialGameState());
 
-  // Initialize floor height based on game height
   const floorHeight = gameSize.height - FLOOR_OFFSET;
   const platformHeight = floorHeight - PLATFORM_OFFSET;
 
-  // Set initial ball position
   useEffect(() => {
     setGameState(prevState => ({
       ...prevState,
@@ -61,7 +61,6 @@ const Game: React.FC = () => {
     }));
   }, [floorHeight]);
 
-  // Handle window resize
   useEffect(() => {
     const handleResize = () => {
       setGameSize({ 
@@ -75,12 +74,10 @@ const Game: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Generate initial platforms
   useEffect(() => {
     generateInitialPlatforms();
   }, [gameSize.width]);
 
-  // Generate initial set of platforms
   const generateInitialPlatforms = () => {
     const newPlatforms: PlatformData[] = [];
     let xPosition = gameSize.width;
@@ -91,8 +88,9 @@ const Game: React.FC = () => {
         position: { x: xPosition, y: platformHeight },
         size: { width: PLATFORM_WIDTH, height: PLATFORM_HEIGHT },
         type: project.type as 'blue' | 'green' | 'yellow',
-        title: `See how we solved ${project.title.toLowerCase()}`,
+        title: project.title,
         description: project.description,
+        mobileDescription: project.mobileDescription,
         link: project.link
       });
       
@@ -105,24 +103,20 @@ const Game: React.FC = () => {
     }));
   };
 
-  // Handle game physics and updates
   const updateGame = useCallback((time: number, deltaTime: number) => {
     if (gameState.isPaused || gameState.isGameOver) return;
     
     setGameState(prevState => {
-      const { ball, platforms } = prevState;
+      const { ball, platforms, currentProjectIndex } = prevState;
       
-      // Update ball position
       let newY = ball.position.y + ball.velocity.y;
       let newVelocityY = ball.velocity.y + GRAVITY;
       
-      // Ball hits the floor
       if (newY + ball.size > floorHeight) {
         newY = floorHeight - ball.size;
-        newVelocityY = 0;
+        newVelocityY = IDLE_BOUNCE_FORCE;
       }
       
-      // Update platforms positions
       const updatedPlatforms = platforms.map(platform => ({
         ...platform,
         position: {
@@ -131,13 +125,12 @@ const Game: React.FC = () => {
         }
       }));
       
-      // Check if we need to add new platforms
       const lastPlatform = updatedPlatforms[updatedPlatforms.length - 1];
       let newPlatforms = [...updatedPlatforms];
       
       if (lastPlatform && lastPlatform.position.x < gameSize.width) {
-        const projectIndex = newPlatforms.length % PROJECTS.length;
-        const project = PROJECTS[projectIndex];
+        const nextIndex = (currentProjectIndex + 1) % PROJECTS.length;
+        const project = PROJECTS[nextIndex];
         
         newPlatforms.push({
           id: generatePlatformId(),
@@ -147,18 +140,25 @@ const Game: React.FC = () => {
           },
           size: { width: PLATFORM_WIDTH, height: PLATFORM_HEIGHT },
           type: project.type as 'blue' | 'green' | 'yellow',
-          title: `See how we solved ${project.title.toLowerCase()}`,
+          title: project.title,
           description: project.description,
+          mobileDescription: project.mobileDescription,
           link: project.link
         });
+        
+        return {
+          ...prevState,
+          currentProjectIndex: nextIndex,
+          platforms: newPlatforms.filter(platform => 
+            platform.position.x + platform.size.width > -100
+          )
+        };
       }
       
-      // Remove platforms that have gone off screen
       newPlatforms = newPlatforms.filter(platform => 
         platform.position.x + platform.size.width > -100
       );
       
-      // Check for collisions with platforms
       let activePopup = prevState.activePopup;
       if (!activePopup) {
         newPlatforms.forEach(platform => {
@@ -188,15 +188,12 @@ const Game: React.FC = () => {
     });
   }, [gameState.isPaused, gameState.isGameOver, floorHeight, gameSize.width, platformHeight]);
 
-  // Set up game loop
   useGameLoop(updateGame, !gameState.isPaused && !gameState.isGameOver);
 
-  // Handle jump action
   const handleJump = useCallback(() => {
     if (gameState.isPaused || gameState.isGameOver) return;
     
     setGameState(prevState => {
-      // Only allow jumping if the ball is on the ground
       if (prevState.ball.position.y + prevState.ball.size >= floorHeight - 2) {
         return {
           ...prevState,
@@ -211,13 +208,11 @@ const Game: React.FC = () => {
     });
   }, [gameState.isPaused, gameState.isGameOver, floorHeight]);
 
-  // Handle closing popup and resetting game
   const handleClosePopup = () => {
     setGameState(initialGameState());
     generateInitialPlatforms();
   };
 
-  // Handle learn more action
   const handleLearnMore = (link: string) => {
     window.open(link, '_blank');
   };
@@ -228,8 +223,16 @@ const Game: React.FC = () => {
       className="relative bg-[#FAF5F2] w-full h-full"
       onClick={handleJump}
     >
-      {/* Game elements */}
       <Ball ball={gameState.ball} />
+      
+      <div 
+        className="absolute bg-black h-[2px]"
+        style={{
+          width: '100%',
+          left: 0,
+          top: `${floorHeight}px`
+        }}
+      />
       
       {gameState.platforms.map(platform => (
         <Platform key={platform.id} platform={platform} />
@@ -237,7 +240,6 @@ const Game: React.FC = () => {
       
       <Floor width={gameSize.width} />
       
-      {/* Popup when ball hits platform */}
       {gameState.activePopup && (
         <Popup 
           project={gameState.activePopup} 
@@ -246,8 +248,7 @@ const Game: React.FC = () => {
         />
       )}
       
-      {/* Game instructions */}
-      <div className="absolute bottom-4 left-4 text-sm text-gray-600">
+      <div className="absolute bottom-4 left-4 text-2xl text-gray-600">
         Click or tap to jump
       </div>
     </div>

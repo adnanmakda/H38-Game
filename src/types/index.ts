@@ -27,6 +27,7 @@ export interface PlatformData {
   type: 'blue' | 'green' | 'yellow';
   title: string;
   description: string;
+  mobileDescription: string;
   link: string;
 }
 
@@ -37,4 +38,5 @@ export interface GameState {
   isGameOver: boolean;
   isPaused: boolean;
   activePopup: PlatformData | null;
+  currentProjectIndex: number;
 }
