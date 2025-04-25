@@ -212,6 +212,10 @@ const Game: React.FC = () => {
       className="relative bg-[#FAF5F2] w-full h-full"
       onClick={handleJump}
     >
+      <div className="absolute bottom-4 left-4 text-2xl text-gray-600" style={{ top: `${floorHeight + 20}px` }}>
+        Click or tap to jump
+      </div>
+
       <Ball ball={gameState.ball} />
       
       <div 
@@ -236,10 +240,6 @@ const Game: React.FC = () => {
           onLearnMore={handleLearnMore}
         />
       )}
-      
-      <div className="absolute bottom-4 left-4 text-2xl text-gray-600">
-        Click or tap to jump
-      </div>
     </div>
   );
 };
