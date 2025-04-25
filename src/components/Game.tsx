@@ -27,6 +27,7 @@ const PLATFORM_OFFSET = 400;
 const Game: React.FC = () => {
   const gameContainerRef = useRef<HTMLDivElement>(null);
   const [gameSize, setGameSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+  const [shouldJumpHigher, setShouldJumpHigher] = useState(false);
   
   const initialGameState = (): GameState => ({
     ball: {
@@ -114,7 +115,8 @@ const Game: React.FC = () => {
       
       if (newY + ball.size > floorHeight) {
         newY = floorHeight - ball.size;
-        newVelocityY = IDLE_BOUNCE_FORCE;
+        newVelocityY = shouldJumpHigher ? JUMP_FORCE : IDLE_BOUNCE_FORCE;
+        setShouldJumpHigher(false);
       }
       
       const updatedPlatforms = platforms.map(platform => ({
@@ -186,27 +188,14 @@ const Game: React.FC = () => {
         isPaused: activePopup !== null
       };
     });
-  }, [gameState.isPaused, gameState.isGameOver, floorHeight, gameSize.width, platformHeight]);
+  }, [gameState.isPaused, gameState.isGameOver, floorHeight, gameSize.width, platformHeight, shouldJumpHigher]);
 
   useGameLoop(updateGame, !gameState.isPaused && !gameState.isGameOver);
 
   const handleJump = useCallback(() => {
     if (gameState.isPaused || gameState.isGameOver) return;
-    
-    setGameState(prevState => {
-      if (prevState.ball.position.y + prevState.ball.size >= floorHeight - 2) {
-        return {
-          ...prevState,
-          ball: {
-            ...prevState.ball,
-            velocity: { ...prevState.ball.velocity, y: JUMP_FORCE },
-            isJumping: true
-          }
-        };
-      }
-      return prevState;
-    });
-  }, [gameState.isPaused, gameState.isGameOver, floorHeight]);
+    setShouldJumpHigher(true);
+  }, [gameState.isPaused, gameState.isGameOver]);
 
   const handleClosePopup = () => {
     setGameState(initialGameState());
