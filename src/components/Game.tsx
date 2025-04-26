@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Ball from './Ball';
 import Platform from './Platform';
-import Floor from './Floor';
+import ScrollingText from './ScrollingText';
 import Popup from './Popup';
 import useGameLoop from '../hooks/useGameLoop';
 import { detectCollision, generatePlatformId } from '../utils/helpers';
@@ -212,26 +212,17 @@ const Game: React.FC = () => {
       className="relative bg-[#FAF5F2] w-full h-full"
       onClick={handleJump}
     >
-      <div className="absolute bottom-4 left-4 text-2xl text-gray-600" style={{ top: `${floorHeight + 20}px` }}>
+      <div className="absolute left-1/2 -translate-x-1/2 text-center w-full px-4 text-2xl text-gray-600 md:text-2xl sm:text-xl" style={{ top: `${floorHeight + 60}px` }}>
         Click or tap to jump
       </div>
 
       <Ball ball={gameState.ball} />
       
-      <div 
-        className="absolute bg-black h-[2px]"
-        style={{
-          width: '100%',
-          left: 0,
-          top: `${floorHeight}px`
-        }}
-      />
+      <ScrollingText width={gameSize.width} top={floorHeight} />
       
       {gameState.platforms.map(platform => (
         <Platform key={platform.id} platform={platform} />
       ))}
-      
-      <Floor width={gameSize.width} />
       
       {gameState.activePopup && (
         <Popup 
