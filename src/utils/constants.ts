@@ -121,4 +121,4 @@ export const PROJECTS = [
       link: 'https://example.com/project13'
     }
   ]
-]
+];
