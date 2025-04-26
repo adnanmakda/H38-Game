@@ -18,11 +18,13 @@
   line-height: 36px;
   font-weight: 600;
   letter-spacing: 0.5px;
+  font-family: 'Outfit', sans-serif; /* Updated font-family */
 }
 
 @media (max-width: 768px) {
   .animate-scroll {
     font-size: 20px;
     line-height: 28px;
+    font-family: 'Outfit', sans-serif; /* Updated font-family */
   }
 }

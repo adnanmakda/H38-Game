@@ -12,7 +12,7 @@ const Popup: React.FC<PopupProps> = ({ project, onClose, onLearnMore }) => {
   const description = isMobile ? project.mobileDescription : project.description;
 
   return (
-    <div className="popup">
+    <div className="popup" style={{ fontFamily: "'Outfit', sans-serif" }}>
       <div className="flex flex-col h-full">
         <div className="flex-grow">
           <h2 className="text-4xl font-bold mb-4">{project.title}</h2>
