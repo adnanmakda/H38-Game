@@ -6,7 +6,7 @@ interface ScrollingTextProps {
 }
 
 const ScrollingText: React.FC<ScrollingTextProps> = ({ width, top }) => {
-  const text = "Innovative Web Solutions • Custom Software Development • Mobile App Development • Cloud Architecture • AI Integration • Blockchain Solutions • IoT Applications • Enterprise Software • DevOps Services • Cybersecurity • Data Analytics • UI/UX Design • Quality Assurance • Agile Consulting • 24/7 Support";
+  const text = "Product Design - Prototyping & 3D Modeling - 3D Printing & Fabrication - AI Agent Development - Web Crawlers & Scrapers - Automation Pipelines - Custom AI Chatbots - Data-Driven Insights - Market & Competitor Analysis - Behavioral Analytics - Research & Strategy Consulting - Web Development - Custom Dashboards & Internal Tools - MVP/Startup Platform Building - E-Commerce or Learning Portals - CRM & Zoho/Notion/Airtable Pipelines - Workflow Automation - Team Ops & Internal Systems Design - Brand Strategy & Positioning - Brand Systems & Asset Libraries - Social Media Strategy - Content Systems - Campaign Funnels - 3D Design - Website Building - CRM & Pipeline Design - Data-Driven Decision Making - Marketing Strategy - Social Media Execution";
   
   return (
     <div 
