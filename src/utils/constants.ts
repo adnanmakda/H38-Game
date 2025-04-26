@@ -28,39 +28,97 @@ export const PLATFORM_TYPES = ['blue', 'green', 'yellow'] as const;
 
 // Projects data
 export const PROJECTS = [
-  {
-    type: 'blue',
-    title: 'Housing Solution',
-    description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.',
-    mobileDescription: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.',
-    link: 'https://example.com/housing'
-  },
-  {
-    type: 'green',
-    title: 'Real Estate Platform',
-    description: 'Our team created a comprehensive real estate management system that simplifies property transactions and improves client communication. The platform features AI-powered property matching and automated document processing.',
-    mobileDescription: 'Comprehensive real estate system with AI-powered matching and automated processing.',
-    link: 'https://example.com/realestate'
-  },
-  {
-    type: 'yellow',
-    title: 'Marketing for Kidzink',
-    description: 'We implemented a targeted marketing strategy for Kidzink that increased their brand visibility and customer engagement by over 200%. The campaign included interactive social media content and gamified educational elements.',
-    mobileDescription: 'Targeted marketing strategy increasing brand visibility by 200% through interactive content.',
-    link: 'https://example.com/kidzink'
-  },
-  {
-    type: 'blue',
-    title: 'Healthcare App',
-    description: 'Developed a revolutionary healthcare application that connects patients with healthcare providers in real-time. Features include AI-powered symptom checking and secure video consultations.',
-    mobileDescription: 'Revolutionary healthcare app with real-time connections and AI symptom checking.',
-    link: 'https://example.com/healthcare'
-  },
-  {
-    type: 'green',
-    title: 'E-learning Platform',
-    description: 'Created an adaptive learning platform that personalizes content based on student performance. Implemented advanced analytics to track progress and suggest optimal learning paths.',
-    mobileDescription: 'Adaptive learning platform with personalized content and advanced analytics.',
-    link: 'https://example.com/elearning'
-  }
-];
+  [
+    {
+      type: 'blue',
+      title: 'Positioning design firms in public infrastructure',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project1'
+    },
+    {
+      type: 'green',
+      title: 'Building digital communities around terrain mapping',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project2'
+    },
+    {
+      type: 'yellow',
+      title: 'Using AI to reshape real estate valuation',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project3'
+    },
+    {
+      type: 'blue',
+      title: 'Helping breeders sell livestock products digitally',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project4'
+    },
+    {
+      type: 'green',
+      title: 'Crafting brand strategies for B2B solar lead generation',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project5'
+    },
+    {
+      type: 'yellow',
+      title: 'Building integrated platforms for education operations',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project6'
+    },
+    {
+      type: 'blue',
+      title: 'Bringing traditional dance to global audiences',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project7'
+    },
+    {
+      type: 'green',
+      title: 'Repositioning bespoke metal fabrication brands',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project8'
+    },
+    {
+      type: 'yellow',
+      title: 'Creating agentic workflows for finance operations',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project9'
+    },
+    {
+      type: 'blue',
+      title: 'Launching STEAM-focused design and tech labs',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project10'
+    },
+    {
+      type: 'green',
+      title: 'Amplifying commercial interiors through material-driven design',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project11'
+    },
+    {
+      type: 'yellow',
+      title: 'Optimizing housing startup workflows through design algorithms',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project12'
+    },
+    {
+      type: 'blue',
+      title: 'Reimagining suburban housing with prefab solutions',
+      description: 'Placeholder description for project overview. Summarizes the objective and impact.',
+      mobileDescription: 'Brief summary for mobile view.',
+      link: 'https://example.com/project13'
+    }
+  ]
+  
