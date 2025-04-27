@@ -13,7 +13,7 @@ export const BALL_POSITION_X = 150;
 // Platform properties
 export const PLATFORM_WIDTH = 400;
 export const PLATFORM_HEIGHT = 150;
-export const PLATFORM_SPEED = 1.5;
+export const PLATFORM_SPEED = 3;
 export const PLATFORM_GAP = 300;
 export const MIN_PLATFORM_Y = 200;
 export const MAX_PLATFORM_Y = 200;
@@ -22,7 +22,7 @@ export const MAX_PLATFORM_Y = 200;
 export const LINE_OFFSET = 10;
 
 // Game settings
-export const SCROLL_SPEED = 3;
+export const SCROLL_SPEED = 2;
 export const GRAVITY_ENABLED = true;
 export const PLATFORM_TYPES = ['blue', 'green', 'yellow'] as const;
 
