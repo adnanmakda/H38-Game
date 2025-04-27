@@ -22,7 +22,7 @@ export const MAX_PLATFORM_Y = 200;
 export const LINE_OFFSET = 10;
 
 // Game settings
-export const SCROLL_SPEED = 2;
+export const SCROLL_SPEED = 3;
 export const GRAVITY_ENABLED = true;
 export const PLATFORM_TYPES = ['blue', 'green', 'yellow'] as const;
 
