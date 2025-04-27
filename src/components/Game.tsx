@@ -210,7 +210,6 @@ const Game: React.FC = () => {
     <div 
       ref={gameContainerRef}
       className="relative bg-[#FAF5F2] w-full h-full"
-      style={{ fontFamily: "'Outfit', sans-serif" }}
       onClick={handleJump}
     >
       <div className="absolute left-1/2 -translate-x-1/2 text-center w-full px-4 text-2xl text-gray-600 md:text-2xl sm:text-xl" style={{ top: `${floorHeight + 60}px` }}>

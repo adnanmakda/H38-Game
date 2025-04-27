@@ -16,15 +16,14 @@
   color: rgba(0, 0, 0, 0.8);
   font-size: 26px;
   line-height: 36px;
-  font-weight: 600;
+  font-weight: 400;
+  font-family: 'Outfit', sans-serif;
   letter-spacing: 0.5px;
-  font-family: 'Outfit', sans-serif; /* Updated font-family */
 }
 
 @media (max-width: 768px) {
   .animate-scroll {
     font-size: 20px;
     line-height: 28px;
-    font-family: 'Outfit', sans-serif; /* Updated font-family */
   }
 }
