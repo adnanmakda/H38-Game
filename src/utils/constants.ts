@@ -12,9 +12,9 @@ export const BALL_POSITION_X = 150;
 
 // Platform properties
 export const PLATFORM_WIDTH = 400;
-export const PLATFORM_HEIGHT = 150;
-export const PLATFORM_SPEED = 3;
-export const PLATFORM_GAP = 300;
+export const PLATFORM_HEIGHT = 120;  // Reduced from 150 to 120
+export const PLATFORM_SPEED_PERCENTAGE = window.innerWidth <= 768 ? 0.007 : 0.0025; // Faster on mobile
+export const PLATFORM_GAP = 100;  // Reduced from 150 to 100
 export const MIN_PLATFORM_Y = 200;
 export const MAX_PLATFORM_Y = 200;
 

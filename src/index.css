@@ -12,7 +12,7 @@
 }
 
 .animate-scroll {
-  animation: scroll 60s linear infinite;
+  animation: scroll 50s linear infinite; /* Changed from 20s to 40s */
   color: rgba(0, 0, 0, 0.8);
   font-size: 26px;
   line-height: 36px;
